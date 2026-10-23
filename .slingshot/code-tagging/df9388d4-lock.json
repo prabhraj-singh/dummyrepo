@@ -1,0 +1,234 @@
+{
+  ".dockerignore": {
+    "filename": ".dockerignore",
+    "path": ".dockerignore",
+    "version": "1.2",
+    "contextFile": "df9388d4-context.json",
+    "chunks": {
+      "f2ae3d": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792738125,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "d52df563"
+        },
+        "hash": "1e80bdfc",
+        "messageId": "system_9efb9d30-cead-11f1-9fd7-234026927caa",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:18:45 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "f2ae3d",
+        "hash": "a7208f03",
+        "encoded": "#%20Python%20cache%20and%20bytecode",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "f2ae3d",
+        "hash": "7cbb2b27",
+        "encoded": "__pycache__/",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "f2ae3d",
+        "hash": "2d466574",
+        "encoded": "*.pyc",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "f2ae3d",
+        "hash": "f10520b5",
+        "encoded": "*.pyo",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "f2ae3d",
+        "hash": "62ab2f82",
+        "encoded": "*.pyd",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "f2ae3d",
+        "hash": "22fc3194",
+        "encoded": ".Python",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "f2ae3d",
+        "hash": "8ac97b04",
+        "encoded": "*.so",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "f2ae3d",
+        "hash": "2f14afae",
+        "encoded": "#%20Environment%20and%20secrets",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "f2ae3d",
+        "hash": "c3342d5c",
+        "encoded": ".env",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "f2ae3d",
+        "hash": "2527bf0a",
+        "encoded": "*.env",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "f2ae3d",
+        "hash": "0fb2f755",
+        "encoded": ".venv",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "f2ae3d",
+        "hash": "519d2a6e",
+        "encoded": "venv/",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "f2ae3d",
+        "hash": "3d20553f",
+        "encoded": "ENV/",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "f2ae3d",
+        "hash": "8af12c12",
+        "encoded": "#%20IDEs%20and%20editors",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "f2ae3d",
+        "hash": "72d3cf34",
+        "encoded": ".vscode/",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "f2ae3d",
+        "hash": "390635ed",
+        "encoded": ".idea/",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "f2ae3d",
+        "hash": "913ac8c8",
+        "encoded": "*.swp",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "f2ae3d",
+        "hash": "0864e0a0",
+        "encoded": "*.swo",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "f2ae3d",
+        "hash": "87dfd733",
+        "encoded": "*~",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "f2ae3d",
+        "hash": "a8176466",
+        "encoded": ".DS_Store",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "f2ae3d",
+        "hash": "508e11aa",
+        "encoded": "#%20Git",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "f2ae3d",
+        "hash": "6c2132e4",
+        "encoded": ".git",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "f2ae3d",
+        "hash": "ee724069",
+        "encoded": ".gitignore",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "f2ae3d",
+        "hash": "096b87e3",
+        "encoded": ".gitattributes",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "f2ae3d",
+        "hash": "69228cd7",
+        "encoded": "#%20Documentation",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "f2ae3d",
+        "hash": "0a50b03f",
+        "encoded": "README.md",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "f2ae3d",
+        "hash": "8da28fbd",
+        "encoded": "*.md",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "f2ae3d",
+        "hash": "2ba32dc7",
+        "encoded": "#%20Agent%20files",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "f2ae3d",
+        "hash": "ac614279",
+        "encoded": ".agent/",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "f2ae3d",
+        "hash": "45460069",
+        "encoded": "#%20Test%20and%20coverage",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "f2ae3d",
+        "hash": "62782de0",
+        "encoded": ".pytest_cache/",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "f2ae3d",
+        "hash": "d8d38318",
+        "encoded": ".coverage",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "f2ae3d",
+        "hash": "1c3772bc",
+        "encoded": "htmlcov/",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "f2ae3d",
+        "hash": "de989af6",
+        "encoded": "*.log",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

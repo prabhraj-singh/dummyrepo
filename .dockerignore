@@ -1,0 +1,40 @@
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Environment and secrets
+.env
+*.env
+.venv
+venv/
+ENV/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+*.md
+
+# Agent files
+.agent/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.log

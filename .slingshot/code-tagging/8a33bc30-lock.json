@@ -1,0 +1,108 @@
+{
+  "Dockerfile": {
+    "filename": "Dockerfile",
+    "path": "Dockerfile",
+    "version": "1.2",
+    "contextFile": "8a33bc30-context.json",
+    "chunks": {
+      "924991": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792738124,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "d52df563"
+        },
+        "hash": "1b93d6a0",
+        "messageId": "system_9efb9d30-cead-11f1-9fd7-234026927caa",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:18:44 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "924991",
+        "hash": "421bf38f",
+        "encoded": "FROM%20python:3.12-slim",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "924991",
+        "hash": "4e70cf41",
+        "encoded": "WORKDIR%20/app",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "924991",
+        "hash": "ca0b6b6a",
+        "encoded": "#%20Copy%20requirements%20and%20install%20dependencies",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "924991",
+        "hash": "b677f736",
+        "encoded": "COPY%20requirements.txt%20.",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "924991",
+        "hash": "e3153dc5",
+        "encoded": "RUN%20pip%20install%20--no-cache-dir%20--upgrade%20pip%20&&%20%5C",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "924991",
+        "hash": "930b780e",
+        "encoded": "pip%20install%20--no-cache-dir%20-r%20requirements.txt",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "924991",
+        "hash": "a5a58498",
+        "encoded": "#%20Copy%20application%20code",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "924991",
+        "hash": "76e57db1",
+        "encoded": "COPY%20server.py%20.",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "924991",
+        "hash": "b0ffd459",
+        "encoded": "#%20Use%20environment%20variable%20for%20port,%20default%20to%208000%20if%20not%20set",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "924991",
+        "hash": "0135c5b9",
+        "encoded": "ENV%20PORT=8000",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "924991",
+        "hash": "8644a7b7",
+        "encoded": "EXPOSE%208000",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "924991",
+        "hash": "417178ff",
+        "encoded": "#%20Run%20the%20MCP%20server",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "924991",
+        "hash": "e44a7f45",
+        "encoded": "CMD%20%5B%22python%22,%20%22server.py%22%5D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

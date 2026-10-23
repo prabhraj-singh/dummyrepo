@@ -1,0 +1,1014 @@
+{
+  "DEPLOYMENT.md": {
+    "filename": "DEPLOYMENT.md",
+    "path": "DEPLOYMENT.md",
+    "version": "1.2",
+    "contextFile": "df4b04c3-context.json",
+    "chunks": {
+      "e7a676": {
+        "user": "You",
+        "model": "gpt-4.1",
+        "timestamp": 1792738125,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "3.5.0",
+        "source": "agent",
+        "type": "agentWriteTool",
+        "extraContext": {
+          "promptMessage": "d52df563"
+        },
+        "hash": "65233b19",
+        "messageId": "system_9efb9d30-cead-11f1-9fd7-234026927caa",
+        "codeBlockId": null,
+        "isActive": true,
+        "hoverData": "\n### Slingshot Generated Code\n\n- **user**: You\n- **model**: gpt-4.1\n- **timestamp**: 10/23/2026, 12:18:45 PM\n- **source**: agent\n- **type**: agentWriteTool\n"
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "e7a676",
+        "hash": "65f8f627",
+        "encoded": "#%20Azure%20Deployment%20Guide%20for%20Dummy%20MCP%20Server",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "e7a676",
+        "hash": "5ac33061",
+        "encoded": "##%20Overview",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "e7a676",
+        "hash": "a7f29cbd",
+        "encoded": "This%20guide%20covers%20deploying%20your%20MCP%20(Model%20Context%20Protocol)%20server%20to%20Azure%20using%20containerization.",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "e7a676",
+        "hash": "75e11f96",
+        "encoded": "##%20Prerequisites",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "e7a676",
+        "hash": "8477425c",
+        "encoded": "-%20Azure%20CLI%20installed%20(%5BInstall%20Guide%5D(https://learn.microsoft.com/en-us/cli/azure/install-azure-cli))",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "e7a676",
+        "hash": "699b6dbb",
+        "encoded": "-%20Docker%20installed%20locally",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "e7a676",
+        "hash": "8ff1cb8b",
+        "encoded": "-%20Active%20Azure%20subscription",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "e7a676",
+        "hash": "b3d0252a",
+        "encoded": "##%20Deployment%20Options",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "e7a676",
+        "hash": "1ed6b1f2",
+        "encoded": "###%20Option%201:%20Azure%20Container%20Instances%20(ACI)",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "e7a676",
+        "hash": "ef87dcbc",
+        "encoded": "**Best%20for:**%20Simple%20deployments,%20testing,%20low-traffic%20applications",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "e7a676",
+        "hash": "426c5e8f",
+        "encoded": "####%20Quick%20Deploy",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "e7a676",
+        "hash": "582a4326",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "e7a676",
+        "hash": "9a196987",
+        "encoded": "#%20Login%20to%20Azure",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "e7a676",
+        "hash": "bb0a46f6",
+        "encoded": "az%20login",
+        "prevChunkIds": []
+      },
+      "20": {
+        "chunkId": "e7a676",
+        "hash": "37261da1",
+        "encoded": "#%20Create%20resource%20group",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "e7a676",
+        "hash": "a778f9c9",
+        "encoded": "az%20group%20create%20--name%20mcp-server-rg%20--location%20eastus",
+        "prevChunkIds": []
+      },
+      "23": {
+        "chunkId": "e7a676",
+        "hash": "eb0ef6af",
+        "encoded": "#%20Build%20and%20push%20to%20Azure%20Container%20Registry",
+        "prevChunkIds": []
+      },
+      "24": {
+        "chunkId": "e7a676",
+        "hash": "21268a38",
+        "encoded": "az%20acr%20create%20--resource-group%20mcp-server-rg%20--name%20mcpserveracr%20--sku%20Basic",
+        "prevChunkIds": []
+      },
+      "25": {
+        "chunkId": "e7a676",
+        "hash": "9568f390",
+        "encoded": "az%20acr%20login%20--name%20mcpserveracr",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "e7a676",
+        "hash": "bc22e175",
+        "encoded": "#%20Build%20and%20tag%20image",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "e7a676",
+        "hash": "c74da797",
+        "encoded": "docker%20build%20-t%20mcpserveracr.azurecr.io/dummy-mcp-server:latest%20.",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "e7a676",
+        "hash": "5980e580",
+        "encoded": "docker%20push%20mcpserveracr.azurecr.io/dummy-mcp-server:latest",
+        "prevChunkIds": []
+      },
+      "31": {
+        "chunkId": "e7a676",
+        "hash": "132bb805",
+        "encoded": "#%20Deploy%20to%20Container%20Instance",
+        "prevChunkIds": []
+      },
+      "32": {
+        "chunkId": "e7a676",
+        "hash": "04d8fbed",
+        "encoded": "az%20container%20create%20%5C",
+        "prevChunkIds": []
+      },
+      "33": {
+        "chunkId": "e7a676",
+        "hash": "9c43d911",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "34": {
+        "chunkId": "e7a676",
+        "hash": "b5065dec",
+        "encoded": "--name%20mcp-server-container%20%5C",
+        "prevChunkIds": []
+      },
+      "35": {
+        "chunkId": "e7a676",
+        "hash": "1e7dbe6c",
+        "encoded": "--image%20mcpserveracr.azurecr.io/dummy-mcp-server:latest%20%5C",
+        "prevChunkIds": []
+      },
+      "36": {
+        "chunkId": "e7a676",
+        "hash": "e90ab2d6",
+        "encoded": "--dns-name-label%20mcp-server-unique%20%5C",
+        "prevChunkIds": []
+      },
+      "37": {
+        "chunkId": "e7a676",
+        "hash": "c3a8a3ca",
+        "encoded": "--ports%208000%20%5C",
+        "prevChunkIds": []
+      },
+      "38": {
+        "chunkId": "e7a676",
+        "hash": "ec877d76",
+        "encoded": "--environment-variables%20PORT=8000%20%5C",
+        "prevChunkIds": []
+      },
+      "39": {
+        "chunkId": "e7a676",
+        "hash": "d8c10c7f",
+        "encoded": "--registry-login-server%20mcpserveracr.azurecr.io%20%5C",
+        "prevChunkIds": []
+      },
+      "40": {
+        "chunkId": "e7a676",
+        "hash": "24677cd2",
+        "encoded": "--registry-username%20mcpserveracr%20%5C",
+        "prevChunkIds": []
+      },
+      "41": {
+        "chunkId": "e7a676",
+        "hash": "305d7f4d",
+        "encoded": "--registry-password%20$(az%20acr%20credential%20show%20--name%20mcpserveracr%20--query%20%22passwords%5B0%5D.value%22%20-o%20tsv)",
+        "prevChunkIds": []
+      },
+      "43": {
+        "chunkId": "e7a676",
+        "hash": "eeb4ba7c",
+        "encoded": "#%20Get%20public%20IP",
+        "prevChunkIds": []
+      },
+      "44": {
+        "chunkId": "e7a676",
+        "hash": "60ce4109",
+        "encoded": "az%20container%20show%20--resource-group%20mcp-server-rg%20--name%20mcp-server-container%20--query%20ipAddress.fqdn",
+        "prevChunkIds": []
+      },
+      "45": {
+        "chunkId": "e7a676",
+        "hash": "5daefab5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "47": {
+        "chunkId": "e7a676",
+        "hash": "8aab50c1",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "49": {
+        "chunkId": "e7a676",
+        "hash": "0b607aa5",
+        "encoded": "###%20Option%202:%20Azure%20App%20Service%20(Web%20App%20for%20Containers)",
+        "prevChunkIds": []
+      },
+      "50": {
+        "chunkId": "e7a676",
+        "hash": "cc04c82e",
+        "encoded": "**Best%20for:**%20Production%20deployments,%20auto-scaling,%20managed%20SSL",
+        "prevChunkIds": []
+      },
+      "52": {
+        "chunkId": "e7a676",
+        "hash": "708536e3",
+        "encoded": "####%20Deploy%20Steps",
+        "prevChunkIds": []
+      },
+      "53": {
+        "chunkId": "e7a676",
+        "hash": "0289fe8c",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "54": {
+        "chunkId": "e7a676",
+        "hash": "e6acd96b",
+        "encoded": "#%20Login%20to%20Azure",
+        "prevChunkIds": []
+      },
+      "55": {
+        "chunkId": "e7a676",
+        "hash": "ebb61c71",
+        "encoded": "az%20login",
+        "prevChunkIds": []
+      },
+      "57": {
+        "chunkId": "e7a676",
+        "hash": "3751158b",
+        "encoded": "#%20Create%20resource%20group",
+        "prevChunkIds": []
+      },
+      "58": {
+        "chunkId": "e7a676",
+        "hash": "5d8c8830",
+        "encoded": "az%20group%20create%20--name%20mcp-server-rg%20--location%20eastus",
+        "prevChunkIds": []
+      },
+      "60": {
+        "chunkId": "e7a676",
+        "hash": "8f746d05",
+        "encoded": "#%20Create%20Azure%20Container%20Registry",
+        "prevChunkIds": []
+      },
+      "61": {
+        "chunkId": "e7a676",
+        "hash": "5df3133c",
+        "encoded": "az%20acr%20create%20--resource-group%20mcp-server-rg%20--name%20mcpserveracr%20--sku%20Basic",
+        "prevChunkIds": []
+      },
+      "62": {
+        "chunkId": "e7a676",
+        "hash": "ab45d520",
+        "encoded": "az%20acr%20login%20--name%20mcpserveracr",
+        "prevChunkIds": []
+      },
+      "64": {
+        "chunkId": "e7a676",
+        "hash": "40632ed3",
+        "encoded": "#%20Build%20and%20push%20image",
+        "prevChunkIds": []
+      },
+      "65": {
+        "chunkId": "e7a676",
+        "hash": "9cde553f",
+        "encoded": "docker%20build%20-t%20mcpserveracr.azurecr.io/dummy-mcp-server:latest%20.",
+        "prevChunkIds": []
+      },
+      "66": {
+        "chunkId": "e7a676",
+        "hash": "9c5dbe3f",
+        "encoded": "docker%20push%20mcpserveracr.azurecr.io/dummy-mcp-server:latest",
+        "prevChunkIds": []
+      },
+      "68": {
+        "chunkId": "e7a676",
+        "hash": "8f89f169",
+        "encoded": "#%20Create%20App%20Service%20Plan",
+        "prevChunkIds": []
+      },
+      "69": {
+        "chunkId": "e7a676",
+        "hash": "fcee7ec8",
+        "encoded": "az%20appservice%20plan%20create%20%5C",
+        "prevChunkIds": []
+      },
+      "70": {
+        "chunkId": "e7a676",
+        "hash": "2bb5357e",
+        "encoded": "--name%20mcp-server-plan%20%5C",
+        "prevChunkIds": []
+      },
+      "71": {
+        "chunkId": "e7a676",
+        "hash": "ef6bc9fd",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "72": {
+        "chunkId": "e7a676",
+        "hash": "b6c12b2d",
+        "encoded": "--is-linux%20%5C",
+        "prevChunkIds": []
+      },
+      "73": {
+        "chunkId": "e7a676",
+        "hash": "48a43ebb",
+        "encoded": "--sku%20B1",
+        "prevChunkIds": []
+      },
+      "75": {
+        "chunkId": "e7a676",
+        "hash": "efccb717",
+        "encoded": "#%20Create%20Web%20App",
+        "prevChunkIds": []
+      },
+      "76": {
+        "chunkId": "e7a676",
+        "hash": "04416b6e",
+        "encoded": "az%20webapp%20create%20%5C",
+        "prevChunkIds": []
+      },
+      "77": {
+        "chunkId": "e7a676",
+        "hash": "10b04882",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "78": {
+        "chunkId": "e7a676",
+        "hash": "2edebca0",
+        "encoded": "--plan%20mcp-server-plan%20%5C",
+        "prevChunkIds": []
+      },
+      "79": {
+        "chunkId": "e7a676",
+        "hash": "20265115",
+        "encoded": "--name%20mcp-server-app-unique%20%5C",
+        "prevChunkIds": []
+      },
+      "80": {
+        "chunkId": "e7a676",
+        "hash": "9e4c134b",
+        "encoded": "--deployment-container-image-name%20mcpserveracr.azurecr.io/dummy-mcp-server:latest",
+        "prevChunkIds": []
+      },
+      "82": {
+        "chunkId": "e7a676",
+        "hash": "a71975b4",
+        "encoded": "#%20Configure%20registry%20credentials",
+        "prevChunkIds": []
+      },
+      "83": {
+        "chunkId": "e7a676",
+        "hash": "4142bc0b",
+        "encoded": "az%20webapp%20config%20container%20set%20%5C",
+        "prevChunkIds": []
+      },
+      "84": {
+        "chunkId": "e7a676",
+        "hash": "b82ea6a0",
+        "encoded": "--name%20mcp-server-app-unique%20%5C",
+        "prevChunkIds": []
+      },
+      "85": {
+        "chunkId": "e7a676",
+        "hash": "99489c0e",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "86": {
+        "chunkId": "e7a676",
+        "hash": "131f531d",
+        "encoded": "--docker-custom-image-name%20mcpserveracr.azurecr.io/dummy-mcp-server:latest%20%5C",
+        "prevChunkIds": []
+      },
+      "87": {
+        "chunkId": "e7a676",
+        "hash": "cd876775",
+        "encoded": "--docker-registry-server-url%20https://mcpserveracr.azurecr.io%20%5C",
+        "prevChunkIds": []
+      },
+      "88": {
+        "chunkId": "e7a676",
+        "hash": "46d74ace",
+        "encoded": "--docker-registry-server-user%20mcpserveracr%20%5C",
+        "prevChunkIds": []
+      },
+      "89": {
+        "chunkId": "e7a676",
+        "hash": "5d3cbf6c",
+        "encoded": "--docker-registry-server-password%20$(az%20acr%20credential%20show%20--name%20mcpserveracr%20--query%20%22passwords%5B0%5D.value%22%20-o%20tsv)",
+        "prevChunkIds": []
+      },
+      "91": {
+        "chunkId": "e7a676",
+        "hash": "9a0780b1",
+        "encoded": "#%20Set%20environment%20variables",
+        "prevChunkIds": []
+      },
+      "92": {
+        "chunkId": "e7a676",
+        "hash": "e93a958d",
+        "encoded": "az%20webapp%20config%20appsettings%20set%20%5C",
+        "prevChunkIds": []
+      },
+      "93": {
+        "chunkId": "e7a676",
+        "hash": "7f896528",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "94": {
+        "chunkId": "e7a676",
+        "hash": "3ad6c957",
+        "encoded": "--name%20mcp-server-app-unique%20%5C",
+        "prevChunkIds": []
+      },
+      "95": {
+        "chunkId": "e7a676",
+        "hash": "666d7123",
+        "encoded": "--settings%20PORT=8000%20WEBSITES_PORT=8000",
+        "prevChunkIds": []
+      },
+      "97": {
+        "chunkId": "e7a676",
+        "hash": "43923149",
+        "encoded": "#%20Your%20app%20will%20be%20available%20at:%20https://mcp-server-app-unique.azurewebsites.net",
+        "prevChunkIds": []
+      },
+      "98": {
+        "chunkId": "e7a676",
+        "hash": "0b932502",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "100": {
+        "chunkId": "e7a676",
+        "hash": "d3592f45",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "102": {
+        "chunkId": "e7a676",
+        "hash": "c0834d8e",
+        "encoded": "###%20Option%203:%20Using%20Docker%20Hub%20(Alternative%20to%20ACR)",
+        "prevChunkIds": []
+      },
+      "104": {
+        "chunkId": "e7a676",
+        "hash": "3ad37616",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "105": {
+        "chunkId": "e7a676",
+        "hash": "2a19db4a",
+        "encoded": "#%20Build%20and%20tag",
+        "prevChunkIds": []
+      },
+      "106": {
+        "chunkId": "e7a676",
+        "hash": "518e69bc",
+        "encoded": "docker%20build%20-t%20yourusername/dummy-mcp-server:latest%20.",
+        "prevChunkIds": []
+      },
+      "108": {
+        "chunkId": "e7a676",
+        "hash": "116b4996",
+        "encoded": "#%20Login%20to%20Docker%20Hub",
+        "prevChunkIds": []
+      },
+      "109": {
+        "chunkId": "e7a676",
+        "hash": "dd7ebfe9",
+        "encoded": "docker%20login",
+        "prevChunkIds": []
+      },
+      "111": {
+        "chunkId": "e7a676",
+        "hash": "4dc69376",
+        "encoded": "#%20Push%20to%20Docker%20Hub",
+        "prevChunkIds": []
+      },
+      "112": {
+        "chunkId": "e7a676",
+        "hash": "b75287ee",
+        "encoded": "docker%20push%20yourusername/dummy-mcp-server:latest",
+        "prevChunkIds": []
+      },
+      "114": {
+        "chunkId": "e7a676",
+        "hash": "78eb8827",
+        "encoded": "#%20Deploy%20to%20Azure%20Container%20Instance%20(using%20Docker%20Hub)",
+        "prevChunkIds": []
+      },
+      "115": {
+        "chunkId": "e7a676",
+        "hash": "cf9f64df",
+        "encoded": "az%20container%20create%20%5C",
+        "prevChunkIds": []
+      },
+      "116": {
+        "chunkId": "e7a676",
+        "hash": "c35e1d91",
+        "encoded": "--resource-group%20mcp-server-rg%20%5C",
+        "prevChunkIds": []
+      },
+      "117": {
+        "chunkId": "e7a676",
+        "hash": "76c5948d",
+        "encoded": "--name%20mcp-server-container%20%5C",
+        "prevChunkIds": []
+      },
+      "118": {
+        "chunkId": "e7a676",
+        "hash": "0578bc5f",
+        "encoded": "--image%20yourusername/dummy-mcp-server:latest%20%5C",
+        "prevChunkIds": []
+      },
+      "119": {
+        "chunkId": "e7a676",
+        "hash": "fa0041da",
+        "encoded": "--dns-name-label%20mcp-server-unique%20%5C",
+        "prevChunkIds": []
+      },
+      "120": {
+        "chunkId": "e7a676",
+        "hash": "f5625076",
+        "encoded": "--ports%208000%20%5C",
+        "prevChunkIds": []
+      },
+      "121": {
+        "chunkId": "e7a676",
+        "hash": "14587630",
+        "encoded": "--environment-variables%20PORT=8000",
+        "prevChunkIds": []
+      },
+      "122": {
+        "chunkId": "e7a676",
+        "hash": "a04f6dd5",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "124": {
+        "chunkId": "e7a676",
+        "hash": "02abb349",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "126": {
+        "chunkId": "e7a676",
+        "hash": "31d342f9",
+        "encoded": "##%20Local%20Testing",
+        "prevChunkIds": []
+      },
+      "128": {
+        "chunkId": "e7a676",
+        "hash": "ee0bc53b",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "129": {
+        "chunkId": "e7a676",
+        "hash": "532153e6",
+        "encoded": "#%20Build%20the%20image",
+        "prevChunkIds": []
+      },
+      "130": {
+        "chunkId": "e7a676",
+        "hash": "b64610e5",
+        "encoded": "docker%20build%20-t%20dummy-mcp-server%20.",
+        "prevChunkIds": []
+      },
+      "132": {
+        "chunkId": "e7a676",
+        "hash": "75daaab4",
+        "encoded": "#%20Run%20locally",
+        "prevChunkIds": []
+      },
+      "133": {
+        "chunkId": "e7a676",
+        "hash": "98a7dab7",
+        "encoded": "docker%20run%20-p%208000:8000%20dummy-mcp-server",
+        "prevChunkIds": []
+      },
+      "135": {
+        "chunkId": "e7a676",
+        "hash": "34e4af12",
+        "encoded": "#%20Test%20in%20another%20terminal",
+        "prevChunkIds": []
+      },
+      "136": {
+        "chunkId": "e7a676",
+        "hash": "017acf39",
+        "encoded": "curl%20http://localhost:8000",
+        "prevChunkIds": []
+      },
+      "137": {
+        "chunkId": "e7a676",
+        "hash": "f5522d99",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "139": {
+        "chunkId": "e7a676",
+        "hash": "26668e64",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "141": {
+        "chunkId": "e7a676",
+        "hash": "6539bd69",
+        "encoded": "##%20Environment%20Variables",
+        "prevChunkIds": []
+      },
+      "143": {
+        "chunkId": "e7a676",
+        "hash": "5ea13f71",
+        "encoded": "Set%20these%20in%20Azure%20App%20Settings%20or%20Container%20Instance%20environment%20variables:",
+        "prevChunkIds": []
+      },
+      "145": {
+        "chunkId": "e7a676",
+        "hash": "add4b4d5",
+        "encoded": "-%20%60PORT%60%20-%20Server%20port%20(default:%208000)",
+        "prevChunkIds": []
+      },
+      "146": {
+        "chunkId": "e7a676",
+        "hash": "71c19c42",
+        "encoded": "-%20Add%20any%20other%20configuration%20needed%20by%20your%20MCP%20server",
+        "prevChunkIds": []
+      },
+      "148": {
+        "chunkId": "e7a676",
+        "hash": "249d9c72",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "150": {
+        "chunkId": "e7a676",
+        "hash": "21fd8f69",
+        "encoded": "##%20Security%20Considerations",
+        "prevChunkIds": []
+      },
+      "152": {
+        "chunkId": "e7a676",
+        "hash": "857d030d",
+        "encoded": "1.%20**Update%20Allowed%20Hosts**:%20Modify%20%60server.py%60%20to%20include%20your%20Azure%20domain:",
+        "prevChunkIds": []
+      },
+      "153": {
+        "chunkId": "e7a676",
+        "hash": "d027fc89",
+        "encoded": "%60%60%60python",
+        "prevChunkIds": []
+      },
+      "154": {
+        "chunkId": "e7a676",
+        "hash": "64729be2",
+        "encoded": "allowed_hosts=%5B",
+        "prevChunkIds": []
+      },
+      "155": {
+        "chunkId": "e7a676",
+        "hash": "c4a9252f",
+        "encoded": "%22your-app-name.azurewebsites.net%22,",
+        "prevChunkIds": []
+      },
+      "156": {
+        "chunkId": "e7a676",
+        "hash": "1419595e",
+        "encoded": "%22your-container.eastus.azurecontainer.io%22,",
+        "prevChunkIds": []
+      },
+      "157": {
+        "chunkId": "e7a676",
+        "hash": "cd2a3b0f",
+        "encoded": "%22127.0.0.1:*%22,",
+        "prevChunkIds": []
+      },
+      "158": {
+        "chunkId": "e7a676",
+        "hash": "8c7ad8b0",
+        "encoded": "%22localhost:*%22,",
+        "prevChunkIds": []
+      },
+      "159": {
+        "chunkId": "e7a676",
+        "hash": "1d335a59",
+        "encoded": "%5D",
+        "prevChunkIds": []
+      },
+      "160": {
+        "chunkId": "e7a676",
+        "hash": "c681a864",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "162": {
+        "chunkId": "e7a676",
+        "hash": "8c64a3e5",
+        "encoded": "2.%20**Use%20Managed%20Identities**:%20For%20production,%20use%20Azure%20Managed%20Identity%20instead%20of%20registry%20passwords",
+        "prevChunkIds": []
+      },
+      "164": {
+        "chunkId": "e7a676",
+        "hash": "aa48e5f3",
+        "encoded": "3.%20**Enable%20HTTPS**:%20App%20Service%20provides%20free%20SSL;%20for%20ACI,%20use%20Azure%20Application%20Gateway",
+        "prevChunkIds": []
+      },
+      "166": {
+        "chunkId": "e7a676",
+        "hash": "fdd6aeec",
+        "encoded": "4.%20**Secrets%20Management**:%20Use%20Azure%20Key%20Vault%20for%20sensitive%20configuration",
+        "prevChunkIds": []
+      },
+      "168": {
+        "chunkId": "e7a676",
+        "hash": "af401e66",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "170": {
+        "chunkId": "e7a676",
+        "hash": "4e805df1",
+        "encoded": "##%20Monitoring",
+        "prevChunkIds": []
+      },
+      "172": {
+        "chunkId": "e7a676",
+        "hash": "ff760365",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "173": {
+        "chunkId": "e7a676",
+        "hash": "a341083b",
+        "encoded": "#%20View%20logs%20(App%20Service)",
+        "prevChunkIds": []
+      },
+      "174": {
+        "chunkId": "e7a676",
+        "hash": "e459a8b0",
+        "encoded": "az%20webapp%20log%20tail%20--name%20mcp-server-app-unique%20--resource-group%20mcp-server-rg",
+        "prevChunkIds": []
+      },
+      "176": {
+        "chunkId": "e7a676",
+        "hash": "d45df327",
+        "encoded": "#%20View%20logs%20(Container%20Instance)",
+        "prevChunkIds": []
+      },
+      "177": {
+        "chunkId": "e7a676",
+        "hash": "91c936e8",
+        "encoded": "az%20container%20logs%20--resource-group%20mcp-server-rg%20--name%20mcp-server-container",
+        "prevChunkIds": []
+      },
+      "178": {
+        "chunkId": "e7a676",
+        "hash": "823cbf55",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "180": {
+        "chunkId": "e7a676",
+        "hash": "0431e558",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "182": {
+        "chunkId": "e7a676",
+        "hash": "0cfa7190",
+        "encoded": "##%20Cleanup%20Resources",
+        "prevChunkIds": []
+      },
+      "184": {
+        "chunkId": "e7a676",
+        "hash": "824127fb",
+        "encoded": "%60%60%60bash",
+        "prevChunkIds": []
+      },
+      "185": {
+        "chunkId": "e7a676",
+        "hash": "b0361a64",
+        "encoded": "#%20Delete%20entire%20resource%20group%20(removes%20all%20resources)",
+        "prevChunkIds": []
+      },
+      "186": {
+        "chunkId": "e7a676",
+        "hash": "d38fe8bf",
+        "encoded": "az%20group%20delete%20--name%20mcp-server-rg%20--yes%20--no-wait",
+        "prevChunkIds": []
+      },
+      "187": {
+        "chunkId": "e7a676",
+        "hash": "01a8494f",
+        "encoded": "%60%60%60",
+        "prevChunkIds": []
+      },
+      "189": {
+        "chunkId": "e7a676",
+        "hash": "392feed2",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "191": {
+        "chunkId": "e7a676",
+        "hash": "39f142df",
+        "encoded": "##%20Troubleshooting",
+        "prevChunkIds": []
+      },
+      "193": {
+        "chunkId": "e7a676",
+        "hash": "25e7c221",
+        "encoded": "**Container%20won't%20start:**",
+        "prevChunkIds": []
+      },
+      "194": {
+        "chunkId": "e7a676",
+        "hash": "1cad731e",
+        "encoded": "-%20Check%20logs%20using%20commands%20above",
+        "prevChunkIds": []
+      },
+      "195": {
+        "chunkId": "e7a676",
+        "hash": "08bcf1d9",
+        "encoded": "-%20Verify%20PORT%20environment%20variable%20is%20set",
+        "prevChunkIds": []
+      },
+      "196": {
+        "chunkId": "e7a676",
+        "hash": "80b9b436",
+        "encoded": "-%20Ensure%20%60server.py%60%20binds%20to%20%600.0.0.0%60%20(not%20%60127.0.0.1%60)",
+        "prevChunkIds": []
+      },
+      "198": {
+        "chunkId": "e7a676",
+        "hash": "d9ef313b",
+        "encoded": "**Cannot%20access%20server:**",
+        "prevChunkIds": []
+      },
+      "199": {
+        "chunkId": "e7a676",
+        "hash": "ea39e3e0",
+        "encoded": "-%20Check%20firewall/NSG%20rules",
+        "prevChunkIds": []
+      },
+      "200": {
+        "chunkId": "e7a676",
+        "hash": "a1c26fee",
+        "encoded": "-%20Verify%20allowed_hosts%20configuration%20in%20server.py",
+        "prevChunkIds": []
+      },
+      "201": {
+        "chunkId": "e7a676",
+        "hash": "93a294da",
+        "encoded": "-%20Confirm%20container%20is%20running:%20%60az%20container%20show%20...%60",
+        "prevChunkIds": []
+      },
+      "203": {
+        "chunkId": "e7a676",
+        "hash": "61fac323",
+        "encoded": "**Build%20fails:**",
+        "prevChunkIds": []
+      },
+      "204": {
+        "chunkId": "e7a676",
+        "hash": "26899e35",
+        "encoded": "-%20Verify%20%60requirements.txt%60%20has%20all%20dependencies",
+        "prevChunkIds": []
+      },
+      "205": {
+        "chunkId": "e7a676",
+        "hash": "beb32383",
+        "encoded": "-%20Check%20Docker%20daemon%20is%20running",
+        "prevChunkIds": []
+      },
+      "206": {
+        "chunkId": "e7a676",
+        "hash": "7732c71e",
+        "encoded": "-%20Ensure%20you're%20logged%20into%20ACR/Docker%20Hub",
+        "prevChunkIds": []
+      },
+      "208": {
+        "chunkId": "e7a676",
+        "hash": "700c03bc",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "210": {
+        "chunkId": "e7a676",
+        "hash": "05cf407e",
+        "encoded": "##%20Cost%20Estimation",
+        "prevChunkIds": []
+      },
+      "212": {
+        "chunkId": "e7a676",
+        "hash": "5b90847d",
+        "encoded": "-%20**Azure%20Container%20Instances%20(B1)**:%20~$10-30/month",
+        "prevChunkIds": []
+      },
+      "213": {
+        "chunkId": "e7a676",
+        "hash": "8f0441f8",
+        "encoded": "-%20**App%20Service%20(B1)**:%20~$13/month",
+        "prevChunkIds": []
+      },
+      "214": {
+        "chunkId": "e7a676",
+        "hash": "506c3c44",
+        "encoded": "-%20**Container%20Registry%20(Basic)**:%20~$5/month",
+        "prevChunkIds": []
+      },
+      "216": {
+        "chunkId": "e7a676",
+        "hash": "ad70c2ce",
+        "encoded": "---",
+        "prevChunkIds": []
+      },
+      "218": {
+        "chunkId": "e7a676",
+        "hash": "09aa6fb3",
+        "encoded": "##%20Next%20Steps",
+        "prevChunkIds": []
+      },
+      "220": {
+        "chunkId": "e7a676",
+        "hash": "4388fabe",
+        "encoded": "-%20Set%20up%20CI/CD%20with%20GitHub%20Actions%20or%20Azure%20DevOps",
+        "prevChunkIds": []
+      },
+      "221": {
+        "chunkId": "e7a676",
+        "hash": "c9ae3382",
+        "encoded": "-%20Configure%20custom%20domain%20and%20SSL%20certificate",
+        "prevChunkIds": []
+      },
+      "222": {
+        "chunkId": "e7a676",
+        "hash": "e8cdc9c9",
+        "encoded": "-%20Implement%20health%20checks%20and%20auto-scaling",
+        "prevChunkIds": []
+      },
+      "223": {
+        "chunkId": "e7a676",
+        "hash": "6e3a54fc",
+        "encoded": "-%20Add%20Application%20Insights%20for%20monitoring",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

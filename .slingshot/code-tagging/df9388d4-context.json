@@ -1,0 +1,15 @@
+{
+  "filename": ".dockerignore",
+  "path": ".dockerignore",
+  "version": "1.1",
+  "files": {},
+  "promptMessage": {
+    "d52df563": {
+      "value": "can you implement these things?"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}
